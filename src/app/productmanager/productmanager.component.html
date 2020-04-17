@@ -1,0 +1,25 @@
+
+<table class="table" style="color: chartreuse" >
+  <thead>
+    <tr>
+      <th>Tên sản phẩm</th>
+      <th>giá sản phẩm</th>
+      <th>thông tin</th>
+       <th>trang thai</th>
+      <th>editedit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td scope="row">{{product.name}}</td>
+      <td>{{product.price}}  </td>
+      <td>{{product.desc}}</td>
+      <td>{{product.status? "Con hang":"Het Hang"}}</td>
+    
+      <td><button class="btn btn-danger" (click)="editproduct(product.id)">edit</button></td>
+      <td><button class="btn btn-danger" (click)="removeItem(product.id)">Delete</button></td>
+      <td>  <a class="nav-link" routerLink="/add-product">Add product</a></td>
+    </tr>
+  </tbody>
+</table>
